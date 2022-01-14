@@ -1,0 +1,12 @@
+f = 6000;
+fs = 16000;
+w = 2*pi*(f/fs);
+N = 50;
+n = 0:N;
+y = sin(w.*n);
+subplot(2,1,1);
+stem(n,y);
+f = -fs/2:fs/(N):fs/2;
+z = fftshift(fft(y));
+subplot(2,1,2);
+plot(f,abs(z));
